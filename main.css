@@ -1,0 +1,192 @@
+@font-face {
+    font-family: iran;
+    src: url(./font/iranyekanwebbold.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: iran;
+}
+
+.box {
+    background-color: #373943;
+}
+
+.col-9 {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top right, #2A2C34, #18191b);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 0 20px #080909;
+}
+
+.col-9 div {
+    margin-top: 140px;
+    margin-right: 100px;
+}
+
+.col-9 div img {
+    -webkit-box-shadow: 3px 9px 63px -3px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 3px 9px 63px -3px rgba(0, 0, 0, 1);
+    box-shadow: 3px 9px 63px -3px rgba(0, 0, 0, 1);
+}
+
+.col-9 div p {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-right: 250px;
+    color: #F1AB1F;
+    position: fixed;
+}
+
+.tw-leading-loose {
+    padding: 10px;
+}
+
+.tw-list-inside {
+    margin-top: 20px;
+    font: bold;
+    list-style-position: inside;
+}
+
+
+.box-login {
+    position: relative;
+    top: 7vh;
+    right: 10vw;
+    width: 400px;
+    height: 85vh;
+    background: linear-gradient(to top right, #18191b, #2A2C34);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px #080909;
+}
+
+.box-login svg {
+    padding-top: 25px;
+    width: 7rem;
+    color: #F1AB1F;
+}
+
+.box-name {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: white;
+}
+
+
+
+.box-form {
+    padding: 20px;
+    width: 100%;
+}
+
+.box-text {
+    font-size: 2rem;
+    text-align: start;
+    color: white;
+    margin-top: 35px;
+}
+
+.box-number {
+    color: white;
+    text-align: left;
+    /* تنظیم جهت متن در فیلد ورودی به سمت چپ */
+    background-color: transparent;
+    overflow: hidden;
+    border: 1px solid #5D5E64;
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    direction: ltr;
+    /* تنظیم جهت متن در فیلد ورودی */
+}
+
+.box-number::placeholder {
+    color: #5D5E64;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-align: right;
+    /* تنظیم جهت پلیس هولدر به سمت راست */
+}
+
+.box-number:focus::placeholder {
+    transform: translateY(-10px);
+    font-size: 0.8rem;
+    color: #F1AB1F;
+}
+
+.text-error {
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    text-align: start;
+    margin-top: 10px;
+}
+
+.ghvanin {
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    text-align: start;
+}
+
+.ghvanin a {
+    color: #F1AB1F;
+    text-decoration: none;
+}
+
+.ghvanin a:hover {
+    color: #F1AB1F;
+    text-decoration: underline;
+}
+
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 30px;
+    border: none;
+    text-align: center;
+    background-color: #F1AB1F;
+    transition: 300ms all;
+}
+
+.btn-login:hover {
+    background-color: #c1891a;
+}
+
+
+#variable-text {
+    position: relative;
+    transition: top 0.5s;
+}
+
+#variable-text.fade-out {
+    top: -20px;
+    opacity: 0;
+}
+
+#variable-text.fade-in {
+    top: 0;
+    opacity: 1;
+}
+
+@media (max-width:1100px) {
+    .box-login {
+        position: relative;
+        top: 0vh;
+        right: 0vw;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        border-radius: 0px;
+        box-shadow: none;
+    }
+
+    .box {
+        background: linear-gradient(to top right, #18191b, #2A2C34);
+    }
+}
