@@ -1,6 +1,10 @@
 const col9 = document.getElementsByClassName('col-9')
 const col3 = document.getElementsByClassName('col-3')
 
+const apiPublic = 'https://brsapi.ir/FreeTsetmcBourseApi/Api_Free_Gold_Currency_v2.json'
+const iconArz = document.getElementsByClassName('icon-arz')
+const dolar = document.getElementById('price-dolar')
+const gold = document.getElementById('price-gold')
 
 const number = document.getElementById('phone-number')
 const numberSendError = document.getElementById('number-protect')
@@ -28,41 +32,6 @@ window.addEventListener('resize', function () {
     }
 });
 
-
-
-// متن‌های متغیر
-const texts = ['آنلاین ، سریع و بدون محدودیت', 'بدون اجرت و مالیات', 'شفاف، تضمین شده و مطمئن', "راهکاری ایمن برای حفظ ارزش پول"];
-
-// عنصر HTML که متن در آن قرار می‌گیرد
-const textElement = document.querySelector('#variable-text');
-
-// متغیر برای نگهداری اندیس متن فعلی
-let currentIndex = 0;
-
-// تابعی برای تغییر متن
-function changeText() {
-    // متن فعلی را عوض کن
-    textElement.textContent = texts[currentIndex];
-
-    // انیمیشن را فعال کن
-    textElement.classList.remove('fade-in');
-    textElement.classList.add('fade-out');
-
-    // بعد از 0.5 ثانیه انیمیشن را غیرفعال کن
-    setTimeout(() => {
-        textElement.classList.remove('fade-out');
-        textElement.classList.add('fade-in');
-    }, 500);
-
-    // اندیس متن فعلی را عوض کن
-    currentIndex = (currentIndex + 1) % texts.length;
-}
-
-// تابع changeText را هر 3 ثانیه یک بار فراخوانی کن
-setInterval(changeText, 3000);
-
-// متن فعلی را تنظیم کن
-changeText();
 
 
 
@@ -93,3 +62,39 @@ number.addEventListener('input', () => {
         numberSendError.classList.remove('text-danger')
     }
 })
+
+
+
+
+window.onload = async function () {
+    const response = await fetch(apiPublic);
+    let data = await response.json();
+    console.log(data)
+
+    // dolar
+    if (data.currency[0].change_percent < 0) {
+        dolar.style.color = '#F16B51'
+        iconArz[0].classList.add('fa-angle-down')
+        iconArz[0].style.color = '#F16B51'
+        dolar.innerHTML = ` ${Math.round(data.currency[0].price).toLocaleString()} (${data.currency[0].change_percent}%)`
+    } else {
+        dolar.style.color = '#96E57B'
+        iconArz[0].classList.add('fa-angle-up')
+        iconArz[0].style.color = '#96E57B'
+        dolar.innerHTML = ` ${Math.round(data.currency[0].price).toLocaleString()} (+${data.currency[0].change_percent}%)`
+    }
+
+    // gold
+    if (data.gold[6].change_percent < 0) {
+        gold.style.color = '#F16B51'
+        iconArz[1].classList.add('fa-angle-down')
+        iconArz[1].style.color = '#F16B51'
+        gold.innerHTML = ` ${Math.round(data.gold[6].price).toLocaleString()} (${data.gold[6].change_percent}%)`
+    } else {
+        gold.style.color = '#96E57B'
+        iconArz[1].classList.add('fa-angle-up')
+        iconArz[1].style.color = '#96E57B'
+        gold.innerHTML = ` ${Math.round(data.gold[6].price).toLocaleString()} (+${data.gold[6].change_percent}%)`
+    }
+
+}

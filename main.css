@@ -1,6 +1,6 @@
 @font-face {
     font-family: iran;
-    src: url(./font/iranyekanwebbold.ttf);
+    src: url(./font/Vazir-Thin.ttf);
 }
 
 * {
@@ -17,7 +17,8 @@
 .col-9 {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to top right, #2A2C34, #18191b);
+    background: rgb(54, 56, 66);
+    background: linear-gradient(180deg, #2A2C34 38%, #2A2C34 80%);
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     box-shadow: 0 0 20px #080909;
@@ -32,14 +33,6 @@
     -webkit-box-shadow: 3px 9px 63px -3px rgba(0, 0, 0, 1);
     -moz-box-shadow: 3px 9px 63px -3px rgba(0, 0, 0, 1);
     box-shadow: 3px 9px 63px -3px rgba(0, 0, 0, 1);
-}
-
-.col-9 div p {
-    font-size: 2rem;
-    margin-top: 20px;
-    margin-right: 250px;
-    color: #F1AB1F;
-    position: fixed;
 }
 
 .tw-leading-loose {
@@ -59,8 +52,9 @@
     right: 10vw;
     width: 400px;
     height: 85vh;
-    background: linear-gradient(to top right, #18191b, #2A2C34);
-    border-radius: 30px;
+    background: rgb(54, 56, 66);
+    background: linear-gradient(180deg, rgba(54, 56, 66, 1) 38%, rgba(30, 31, 38, 1) 80%);
+    border-radius: 20px;
     text-align: center;
     box-shadow: 0 0 20px #080909;
 }
@@ -80,21 +74,20 @@
 
 
 .box-form {
-    padding: 20px;
+    padding: 30px;
     width: 100%;
 }
 
 .box-text {
-    font-size: 2rem;
+    font-size: 1.75rem;
     text-align: start;
     color: white;
-    margin-top: 35px;
+    margin-top: 20px;
 }
 
 .box-number {
     color: white;
     text-align: left;
-    /* تنظیم جهت متن در فیلد ورودی به سمت چپ */
     background-color: transparent;
     overflow: hidden;
     border: 1px solid #5D5E64;
@@ -102,7 +95,6 @@
     padding: 15px;
     border-radius: 20px;
     direction: ltr;
-    /* تنظیم جهت متن در فیلد ورودی */
 }
 
 .box-number::placeholder {
@@ -110,7 +102,6 @@
     transition: all 0.3s ease;
     font-size: 1rem;
     text-align: right;
-    /* تنظیم جهت پلیس هولدر به سمت راست */
 }
 
 .box-number:focus::placeholder {
@@ -120,10 +111,10 @@
 }
 
 .text-error {
-    font-size: 1rem;
+    font-size: .75rem;
     color: rgb(255, 255, 255);
     text-align: start;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .ghvanin {
@@ -146,6 +137,7 @@
 .btn-login {
     width: 100%;
     padding: 15px;
+    font-size: 0.80rem;
     border-radius: 20px;
     margin-top: 30px;
     border: none;
@@ -159,20 +151,79 @@
 }
 
 
-#variable-text {
+
+.text-anim {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-right: 300px;
+    color: #F1AB1F;
+    position: fixed;
+    display: flex;
+}
+
+.slider {
     position: relative;
-    transition: top 0.5s;
+    height: 2em;
+    width: 600px;
+    overflow: hidden;
 }
 
-#variable-text.fade-out {
-    top: -20px;
-    opacity: 0;
+.slider__word {
+    font-weight: 100;
+    margin-right: 10px;
+    position: absolute;
+    animation: slide 2.5s linear infinite;
+    color: #f5f5f5;
 }
 
-#variable-text.fade-in {
-    top: 0;
-    opacity: 1;
+.slider__word:nth-child(2) {
+    animation-delay: 0.83s;
 }
+
+.slider__word:nth-child(3) {
+    animation-delay: 1.67s;
+}
+
+
+@keyframes slide {
+    0% {
+        transform: translateY(100%);
+        opacity: 0.1;
+    }
+
+    15% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    45% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0.1;
+    }
+}
+
+.box-arz {
+    position: fixed;
+    padding: 7px;
+    background: rgb(54, 56, 66);
+    background: linear-gradient(180deg, rgba(54, 56, 66, 1) 38%, rgba(30, 31, 38, 1) 80%);
+    width: 80%;
+    height: 60px;
+    box-shadow: 0 0 20px #080909;
+}
+
+
+
 
 @media (max-width:1100px) {
     .box-login {
@@ -180,6 +231,7 @@
         top: 0vh;
         right: 0vw;
         width: 100%;
+        margin-top: 50px;
         height: 100vh;
         text-align: center;
         border-radius: 0px;
@@ -187,6 +239,7 @@
     }
 
     .box {
-        background: linear-gradient(to top right, #18191b, #2A2C34);
+        background: rgb(54, 56, 66);
+        background: linear-gradient(180deg, rgba(54, 56, 66, 1) 38%, rgba(30, 31, 38, 1) 80%);
     }
 }
