@@ -154,7 +154,7 @@
 
 
 .text-anim {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-top: 40px;
     margin-right: 300px;
     color: #F1AB1F;
@@ -172,6 +172,7 @@
 .slider__word {
     font-weight: 100;
     margin-right: 10px;
+    font-size: 1.5rem;
     position: absolute;
     animation: slide 6s linear infinite;
     color: #f5f5f5;
