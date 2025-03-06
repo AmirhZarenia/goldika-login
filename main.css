@@ -1,6 +1,6 @@
 @font-face {
     font-family: iran;
-    src: url(./font/Vazir-Thin.ttf);
+    src: url(./font/Vazir-Bold.ttf);
 }
 
 * {
@@ -49,12 +49,12 @@
 .box-login {
     position: relative;
     top: 7vh;
-    right: 10vw;
-    width: 400px;
-    height: 85vh;
+    right: 11vw;
+    width: 370px;
+    height: 80vh;
     background: rgb(54, 56, 66);
     background: linear-gradient(180deg, rgba(54, 56, 66, 1) 38%, rgba(30, 31, 38, 1) 80%);
-    border-radius: 20px;
+    border-radius: 12px;
     text-align: center;
     box-shadow: 0 0 20px #080909;
 }
@@ -74,12 +74,12 @@
 
 
 .box-form {
-    padding: 30px;
+    padding: 5px 30px;
     width: 100%;
 }
 
 .box-text {
-    font-size: 1.75rem;
+    font-size: 1.60rem;
     text-align: start;
     color: white;
     margin-top: 20px;
@@ -98,7 +98,7 @@
 }
 
 .box-number::placeholder {
-    color: #5D5E64;
+    color: #ffffff;
     transition: all 0.3s ease;
     font-size: 1rem;
     text-align: right;
@@ -112,13 +112,13 @@
 
 .text-error {
     font-size: .75rem;
-    color: rgb(255, 255, 255);
+    color: white;
     text-align: start;
-    margin-top: 20px;
+    margin-top: 12px;
 }
 
 .ghvanin {
-    font-size: 1rem;
+    font-size: .85rem;
     color: rgb(255, 255, 255);
     text-align: start;
 }
@@ -136,10 +136,11 @@
 
 .btn-login {
     width: 100%;
-    padding: 15px;
-    font-size: 0.80rem;
-    border-radius: 20px;
-    margin-top: 30px;
+    color: black;
+    padding: 7px;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-top: 15px;
     border: none;
     text-align: center;
     background-color: #F1AB1F;
@@ -172,17 +173,18 @@
     font-weight: 100;
     margin-right: 10px;
     position: absolute;
-    animation: slide 2.5s linear infinite;
+    animation: slide 6s linear infinite;
     color: #f5f5f5;
 }
 
 .slider__word:nth-child(2) {
-    animation-delay: 0.83s;
+    animation-delay: 2s;
 }
 
 .slider__word:nth-child(3) {
-    animation-delay: 1.67s;
+    animation-delay: 4s;
 }
+
 
 
 @keyframes slide {
