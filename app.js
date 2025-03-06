@@ -10,6 +10,7 @@ const number = document.getElementById('phone-number')
 const numberSendError = document.getElementById('number-protect')
 
 
+
 if (window.outerWidth < 1100) {
     col9[0].classList.add('col-0')
     col9[0].style.display = 'none'
