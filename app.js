@@ -7,7 +7,13 @@ const dolar = document.getElementById('price-dolar')
 const gold = document.getElementById('price-gold')
 
 const number = document.getElementById('phone-number')
+const code = document.getElementById('code')
 const numberSendError = document.getElementById('number-protect')
+const btnLogin = document.getElementById('btn-login')
+const textSendCode = document.getElementById('text-login')
+const ghvanin = document.getElementById('ghvanin')
+const btnRegister = document.getElementById('btn-register-code')
+const changeNumber = document.getElementById('change-number')
 
 
 
@@ -53,14 +59,52 @@ number.addEventListener('input', () => {
         .trim();
     number.value = formattedValue;
 
-    if (value.search('09') && number.value) {
+    console.log(number.value.length)
+
+    if (value.search('09') && number.value && number.value.length <= 13) {
         numberSendError.innerHTML = 'شماره موبایل معتبر نمیباشد لطفا یک شماره معتبر وارد کنید .'
         numberSendError.classList.add('text-danger')
         numberSendError.classList.remove('text-white')
+        btnLogin.addEventListener('click', (e) => {
+            e.preventDefault()
+        })
     } else if (!value.search('09') || !number.value) {
         numberSendError.innerHTML = 'مالکیت شماره باید به نام خودتان باشد'
         numberSendError.classList.add('text-white')
         numberSendError.classList.remove('text-danger')
+        if (number.value.length === 13) {
+            btnLogin.addEventListener('click', (e) => {
+                textSendCode.innerHTML = 'کد یکبار مصرف ارسال شد'
+                numberSendError.innerHTML = 'مالکیت شماره باید به نام خودتان باشد'
+                numberSendError.classList.add('text-white')
+                numberSendError.classList.remove('text-danger')
+                numberSendError.style.display = 'none'
+                ghvanin.style.display = 'none'
+                number.style.display = 'none'
+                code.style.display = 'block'
+                btnLogin.style.display = 'none'
+                btnRegister.style.display = 'block'
+                changeNumber.style.display = 'block'
+                changeNumber.addEventListener('click', () => {
+                    textSendCode.innerHTML = 'ورود | ثبت نام'
+                    numberSendError.style.display = 'block'
+                    ghvanin.style.display = 'block'
+                    number.style.display = 'block'
+                    code.style.display = 'none'
+                    btnLogin.style.display = 'block'
+                    btnRegister.style.display = 'none'
+                    changeNumber.style.display = 'none'
+                })
+            })
+        }
+        if (number.value.length < 13) {
+            btnLogin.addEventListener('click', (e) => {
+                numberSendError.innerHTML = 'شماره موبایل معتبر نمیباشد لطفا یک شماره معتبر وارد کنید .'
+                numberSendError.classList.add('text-danger')
+                numberSendError.classList.remove('text-white')
+            })
+        }
+
     }
 })
 

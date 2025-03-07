@@ -27,14 +27,18 @@
 
                     <div class="box-name">مرکز طلا</div>
 
-                    <form class="box-form" action="">
-                        <p class="box-text">ورود | ثبت نام</p>
+                    <form class="box-form">
+                        <p id="text-login" class="box-text">ورود | ثبت نام</p>
                         <input id="phone-number" maxlength="11" required class="box-number" type="text"
                             placeholder="شماره تلفن همراه">
+                        <input id="code" maxlength="6" required class="box-code" type="text"
+                            placeholder="کد 6 رقمی ارسال شده رو وارد کنید">
                         <p class="text-error" id="number-protect">مالکیت شماره باید به نام خودتان باشد</p>
-                        <p class="ghvanin">با ورود یا ثبت نام ، <a href="" type="button" data-bs-toggle="modal"
-                                data-bs-target="#mymodal">شرایط و قوانین</a> را میپذیرم.</p>
-                        <button class="btn-login" type="submit">ادامه</button>
+                        <p id="ghvanin" class="ghvanin">با ورود یا ثبت نام ، <a href="" type="button"
+                                data-bs-toggle="modal" data-bs-target="#mymodal">شرایط و قوانین</a> را میپذیرم.</p>
+                        <button id="btn-login" class="btn-login" type="submit">ادامه</button>
+                        <button id="btn-register-code" class="btn-register" type="submit">ادامه</button>
+                        <button id="change-number" class="change-number" type="submit">تغییر شماره</button>
                     </form>
 
 

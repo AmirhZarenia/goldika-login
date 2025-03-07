@@ -97,6 +97,32 @@
     direction: ltr;
 }
 
+.box-code {
+    color: white;
+    text-align: left;
+    background-color: transparent;
+    overflow: hidden;
+    border: 1px solid #5D5E64;
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    direction: ltr;
+    display: none;
+}
+
+.box-code::placeholder {
+    color: #ffffff;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-align: right;
+}
+
+.box-code:focus::placeholder {
+    transform: translateY(-10px);
+    font-size: 0.8rem;
+    color: #F1AB1F;
+}
+
 .box-number::placeholder {
     color: #ffffff;
     transition: all 0.3s ease;
@@ -148,6 +174,42 @@
 }
 
 .btn-login:hover {
+    background-color: #c1891a;
+}
+
+.btn-register {
+    width: 100%;
+    color: black;
+    padding: 7px;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-top: 30px;
+    border: none;
+    text-align: center;
+    background-color: #F1AB1F;
+    transition: 300ms all;
+    display: none;
+}
+
+.btn-register:hover {
+    background-color: #c1891a;
+}
+
+.change-number {
+    width: 100%;
+    color: black;
+    padding: 7px;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-top: 30px;
+    border: none;
+    text-align: center;
+    background-color: #F1AB1F;
+    transition: 300ms all;
+    display: none;
+}
+
+.change-number:hover {
     background-color: #c1891a;
 }
 
