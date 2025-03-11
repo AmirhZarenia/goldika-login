@@ -43,6 +43,8 @@ window.addEventListener('resize', function () {
 
 
 
+
+
 number.addEventListener('input', () => {
     const value = number.value.replace(/[^0-9]/g, '');
     number.value = value;
@@ -59,7 +61,6 @@ number.addEventListener('input', () => {
         .trim();
     number.value = formattedValue;
 
-    console.log(number.value.length)
 
     if (value.search('09') && number.value && number.value.length <= 13) {
         numberSendError.innerHTML = 'شماره موبایل معتبر نمیباشد لطفا یک شماره معتبر وارد کنید .'
@@ -95,6 +96,62 @@ number.addEventListener('input', () => {
                     btnRegister.style.display = 'none'
                     changeNumber.style.display = 'none'
                 })
+
+                // Send Sms For Login
+                const apiKey = '3445624B79745951442B4433595476516F47552F4B4A75356F6C785976636D53714D53394D463439776C383D';
+                const verify = 'Login-Users'; // یک شماره تلفن معتبر
+                const receptor = number.value;
+                const token = Math.floor(Math.random() * 1000000).toString().padStart(6, '0');
+
+                const url = `https://api.kavenegar.com/v1/${apiKey}/verify/lookup.json?receptor=${receptor}&token=${token}&template=${verify}`;
+
+                axios.post(url, null, {
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                })
+                    .then((response) => {
+                        console.log(response.data);
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+
+                btnRegister.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    if (code.value === token) {
+                        Swal.fire({
+                            title: 'موفقیت آمیز',
+                            text: 'کد وارد شده درست است خوش آمدید',
+                            icon: 'success',
+                            confirmButtonText: 'تایید',
+                            timer: '3000',
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        })
+                    } else {
+                        Swal.fire({
+                            title: 'خطا',
+                            text: 'کد 6 رقمی وارد شده صحیح نمیباشد لطفا کد درست رو وارد کنید',
+                            icon: 'error',
+                            confirmButtonText: 'تایید',
+                            timer: '3000',
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        })
+                    }
+                })
+
+                changeNumber.addEventListener('click', (e) => {
+                    e.preventDefault()
+                })
+
+
             })
         }
         if (number.value.length < 13) {
@@ -103,6 +160,7 @@ number.addEventListener('input', () => {
                 numberSendError.classList.add('text-danger')
                 numberSendError.classList.remove('text-white')
             })
+
         }
 
     }
@@ -114,7 +172,6 @@ number.addEventListener('input', () => {
 window.onload = async function () {
     const response = await fetch(apiPublic);
     let data = await response.json();
-    console.log(data)
 
     // dolar
     if (data.currency[0].change_percent < 0) {
@@ -143,3 +200,5 @@ window.onload = async function () {
     }
 
 }
+
+

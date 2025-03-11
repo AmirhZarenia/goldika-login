@@ -33,6 +33,7 @@
     -webkit-box-shadow: 3px 9px 63px -3px rgba(0, 0, 0, 1);
     -moz-box-shadow: 3px 9px 63px -3px rgba(0, 0, 0, 1);
     box-shadow: 3px 9px 63px -3px rgba(0, 0, 0, 1);
+    background-color: #1F2126;
 }
 
 .tw-leading-loose {
@@ -111,7 +112,7 @@
 }
 
 .box-code::placeholder {
-    color: #ffffff;
+    color: #BCBDBF;
     transition: all 0.3s ease;
     font-size: 1rem;
     text-align: right;
@@ -123,8 +124,9 @@
     color: #F1AB1F;
 }
 
+
 .box-number::placeholder {
-    color: #ffffff;
+    color: #BCBDBF;
     transition: all 0.3s ease;
     font-size: 1rem;
     text-align: right;
@@ -152,6 +154,11 @@
 .ghvanin a {
     color: #F1AB1F;
     text-decoration: none;
+
+}
+
+.tw-leading-loose {
+    line-height: 2;
 }
 
 .ghvanin a:hover {
@@ -307,5 +314,13 @@
     .box {
         background: rgb(54, 56, 66);
         background: linear-gradient(180deg, rgba(54, 56, 66, 1) 38%, rgba(30, 31, 38, 1) 80%);
+    }
+
+    #price-dolar {
+        font-size: 0.75rem;
+    }
+
+    #price-gold {
+        font-size: 0.75rem;
     }
 }

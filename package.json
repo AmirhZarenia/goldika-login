@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axios": "^1.8.2",
+    "kavenegar": "^1.1.4"
+  }
+}
